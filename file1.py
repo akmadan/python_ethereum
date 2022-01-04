@@ -1,3 +1,5 @@
+## Code to just complete a transaction using ganache 
+
 from web3 import Web3 
 ganache_url = 'HTTP://127.0.0.1:7545'
 web3 = Web3(Web3.HTTPProvider(ganache_url))
@@ -26,3 +28,4 @@ signed_tx = web3.eth.account.sign_transaction(tx, act1_private)
 ## Creating hash
 tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
 print(tx_hash)
+print(web3.toHex(tx_hash))
